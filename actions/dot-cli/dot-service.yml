@@ -1,0 +1,5 @@
+---
+- name: "default"
+  active: true
+  credentials:
+    user: "admin@dotcms.com"
