@@ -8,8 +8,13 @@ inputs:
     default: 'push'
   directory: 
     description: 'what we want to push'  
-  required: true
+    required: true
     default: '.'
+  flaags:
+    description: 
+    required : false
+    default: '-e'
+
 outputs:
   return-code: # id of output.
     description: 'Command return code'
@@ -20,3 +25,4 @@ runs:
   args:
     - ${{ inputs.command }}
     - ${{ inputs.directory }}
+    - ${{ inputs.flags }}

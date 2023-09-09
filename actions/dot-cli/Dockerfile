@@ -6,8 +6,8 @@ ARG RUN_JAVA_VERSION=1.3.8
 ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en'
 ARG RUN_DOT_CLI_VERSION='1.0.0-SNAPSHOT'
 
-RUN mkdir -p /dot-cli
-RUN chmod 777 /dot-cli
+ENV USER_HOME=/root/
+ENV DOT_SERVICES_HOME=${USER_HOME}.dotcms/
 
 ENV DOT_CLI_HOME=/dot-cli/
 ENV QUARKUS_LOG_FILE_PATH=${DOT_CLI_HOME}dotcms-cli.log
@@ -15,9 +15,14 @@ ENV DOT_CLI=cli-${RUN_DOT_CLI_VERSION}-runner.jar
 
 ENV DOT_CLI_JAR = "${DOT_CLI_HOME}${DOT_CLI}"
 
+RUN mkdir -p ${DOT_CLI_HOME}
+RUN chmod 777 ${DOT_CLI_HOME}
+
 COPY ${DOT_CLI} ${DOT_CLI_HOME}
 
 COPY entrypoint.sh ${DOT_CLI_HOME}
+
+COPY dot-service.yml ${DOT_SERVICES_HOME}
 
 RUN echo "DOT_CLI_HOME: ${DOT_CLI_HOME}"
 
