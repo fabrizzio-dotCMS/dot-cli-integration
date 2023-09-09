@@ -2,7 +2,7 @@
 name: 'dot-cli'
 description: 'Fire dotCMS cli'
 inputs:
-  command:  # id of input.
+  command: 
     description: 'dot-cli command'
     required: true
     default: 'push'
@@ -10,11 +10,7 @@ inputs:
     description: 'what we want to push'  
     required: true
     default: '.'
-  flaags:
-    description: 
-    required : false
-    default: '-e'
-
+  
 outputs:
   return-code: # id of output.
     description: 'Command return code'
@@ -24,5 +20,4 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.command }}
-    - ${{ inputs.directory }}
-    - ${{ inputs.flags }}
+    - ${{ inputs.directory }}  
