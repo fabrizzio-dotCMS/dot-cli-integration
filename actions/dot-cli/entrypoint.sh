@@ -30,4 +30,4 @@
 
   echo ":::::::" 
 
-  ls $GITHUB_WORKSPACE
+  ls /home/runner/work/_temp/_github_home
