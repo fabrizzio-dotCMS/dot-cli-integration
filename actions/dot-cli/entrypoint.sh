@@ -9,5 +9,5 @@
   echo "$@";  # will echo all args except first one
 
   var=$(bash /dot-cli/run-java.sh "$@" )  
-  #echo "var: $var"
-  #echo "exit code: $?"
+  echo "var: $var"
+  echo "exit code: $?"
