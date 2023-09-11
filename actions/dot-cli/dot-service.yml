@@ -3,4 +3,4 @@
   active: true
   credentials:
     user: "admin@dotcms.com"
-    token: "plchldr"
+    token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcGkwM2ZiY2ZjZi04ZDA2LTQ5ZTUtYTUwZC1mYTY1Yzk4NGI4YjQiLCJ4bW9kIjoxNjk0NDY5MTA5MDAwLCJuYmYiOjE2OTQ0NjkxMDksImlzcyI6IjRhZmYwZGZiMDciLCJsYWJlbCI6ImNsaSIsImV4cCI6MTc4OTEwNjQwMSwiaWF0IjoxNjk0NDY5MTA5LCJqdGkiOiIxYmI5YjhjNC1lZTcwLTRiMmYtYjFjNC0wYWY3NTMzNmM0MGQifQ.y6s9pXsMnavzoGD-FkMLpKEXEBIhB8QtP3n5EYFzQF4"
