@@ -1,11 +1,13 @@
 #!/bin/sh
-  #bash "./dot-cli/run-java.sh" "$@"
-
-  ls /dot-cli
   
-  #var=$(bash /dot-cli/run-java.sh "$@" )
-  var=$(bash /dot-cli/run-java.sh "$2" )
-  echo "var: $var"
-  echo "exit code: $?"
-
+  ls /dot-cli
+  #proof that we can access the repo from within the script
   cat /github/workspace/README.md
+  
+  echo "$@";  # will echo all args
+  shift;  # will remove first arg from the "$@"
+  echo "$@";  # will echo all args except first one
+
+  var=$(bash /dot-cli/run-java.sh "$@" )  
+  #echo "var: $var"
+  #echo "exit code: $?"

@@ -9,6 +9,16 @@ inputs:
     description: 'dot-cli command'
     required: true
     default: 'push'
+  sub-command: 
+    description: 'sub-command'
+    required: false    
+  default-action-arg:     
+    required: false      
+  option:     
+    required: false
+  option-value:     
+    required: false        
+    
   
 outputs:
   return-code: # id of output.
@@ -17,6 +27,10 @@ outputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.token }}   
-    - ${{ inputs.command }}    
+  args:  # 'ct pull FileAsset --workspace /github/workspace/'
+    - ${{ inputs.token }}
+    - ${{ inputs.command }}
+    - ${{ inputs.sub-command }}
+    - ${{ inputs.default-action-arg }}
+    - ${{ inputs.option }}
+    - ${{ inputs.option-value }}
