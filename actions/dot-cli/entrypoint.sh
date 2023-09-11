@@ -21,3 +21,7 @@
   echo "exit code: $?"
 
   cat "${QUARKUS_LOG_FILE_PATH}"
+
+  echo "repository after cli run ::: " 
+
+  ls /github/workspace/

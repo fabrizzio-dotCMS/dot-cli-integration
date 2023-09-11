@@ -26,6 +26,7 @@ COPY entrypoint.sh ${DOT_CLI_HOME}
 #The sufix value used to create the environment value must match the name on dot-service.yml file in this case we are using default
 #dotcms.client.servers.default=https://demo.dotcms.com/api
 ENV DOTCMS_CLIENT_SERVERS_DEFAULT=https://demo.dotcms.com/api
+
 #now move the file into the dotcms folder located uder the user home folder
 COPY dot-service.yml ${DOT_SERVICES_HOME}
 

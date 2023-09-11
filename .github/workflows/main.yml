@@ -44,7 +44,8 @@ jobs:
            sub-command: 'pull'
            default-action-arg: 'FileAsset'
            option: '--workspace'
-           option-value: '/github/workspace/'      
+           option-value: '/github/workspace/' 
+           option-verbose: '--verbose'     
 
       - name: Get the cli return-code
         run: echo "The time was ${{ steps.dot-cli.outputs.return-code }}"

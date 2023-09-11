@@ -15,7 +15,8 @@ inputs:
     required: false
   option-value:     
     required: false        
-    
+  option-verbose:     
+    required: false    
   
 outputs:
   return-code: # id of output.
@@ -30,3 +31,4 @@ runs:
     - ${{ inputs.default-action-arg }}
     - ${{ inputs.option }}
     - ${{ inputs.option-value }}
+    - ${{ inputs.option-verbose }}
