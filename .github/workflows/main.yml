@@ -44,7 +44,7 @@ jobs:
            sub-command: 'pull'
            default-action-arg: 'FileAsset'
            option: '--workspace'
-           option-value: '/github/workspace/' 
+           option-value: '/github/workspace/contents/' 
            option-verbose: '--verbose'     
 
       - name: Get the cli return-code

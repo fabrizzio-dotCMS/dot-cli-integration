@@ -2,7 +2,7 @@
   
   ls /dot-cli
 
-  #proof that we can access the repo from within the script
+  echo "Proof that we can access the repo from within the script."
   cat /github/workspace/README.md
   
 
@@ -22,6 +22,6 @@
 
   cat "${QUARKUS_LOG_FILE_PATH}"
 
-  echo "repository after cli run ::: " 
+  echo "Repository after cli run ::: " 
 
-  ls /github/workspace/
+  ls /github/workspace/contents/
