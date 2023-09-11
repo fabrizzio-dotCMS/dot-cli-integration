@@ -11,8 +11,8 @@
   tkn=$1
   echo $tkn
 
-  #Replace the token with the value passed in the docker workflow action
-  sed -i -e  "s/token_plchldr/$tkn/g" "${DOT_SERVICES_HOME}dot-service.yml"
+  #Replace the safe-pass with the value passed in the docker workflow action
+  sed -i -e  "s/plchldr/$tkn/g" "${DOT_SERVICES_HOME}dot-service.yml"
 
 
   echo "$@";  # will echo all args

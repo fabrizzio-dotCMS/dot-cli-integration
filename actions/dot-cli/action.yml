@@ -2,8 +2,8 @@
 name: 'dot-cli'
 description: 'Fire dotCMS cli'
 inputs:
-  token:
-    description: 'dotCMS token'
+  pass:
+    description: 'safe pass'
     required: true    
   command: 
     description: 'dot-cli command'
@@ -28,7 +28,7 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:  # 'ct pull FileAsset --workspace /github/workspace/'
-    - ${{ inputs.token }}
+    - ${{ inputs.pass }}
     - ${{ inputs.command }}
     - ${{ inputs.sub-command }}
     - ${{ inputs.default-action-arg }}
