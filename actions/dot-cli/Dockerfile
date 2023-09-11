@@ -31,6 +31,8 @@ COPY dot-service.yml ${DOT_SERVICES_HOME}
 
 ARG tkn=$1
 
+RUN echo $tkn
+
 #Replace the token with the value passed in the docker workflow action
 RUN sed -i -e  "s/token_plchldr/$tkn/g" "${DOT_SERVICES_HOME}dot-service.yml"
 
