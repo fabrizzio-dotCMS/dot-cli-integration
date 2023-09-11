@@ -8,8 +8,8 @@
   cat /github/workspace/README.md
   
 
-  tkn=$1
-  echo $tkn
+  tkn="$1"
+  echo "Safe pass is :: $tkn"  
 
   #Replace the safe-pass with the value passed in the docker workflow action
   sed -i -e  "s/plchldr/$tkn/g" "${DOT_SERVICES_HOME}dot-service.yml"
