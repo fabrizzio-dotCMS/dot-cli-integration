@@ -29,9 +29,10 @@ ENV DOTCMS_CLIENT_SERVERS_DEFAULT=https://demo.dotcms.com/api
 #now move the file into the dotcms folder located uder the user home folder
 COPY dot-service.yml ${DOT_SERVICES_HOME}
 
+ARG token = $1;
 
 #Replace the token with the value passed in the docker workflow action
-RUN sed -i 's/token_plchldr/$1/g' "${DOT_SERVICES_HOME}dot-service.yml"
+RUN sed -i 's/token_plchldr/${token}/g' "${DOT_SERVICES_HOME}dot-service.yml"
 
 RUN cat "${DOT_SERVICES_HOME}dot-service.yml"
 
@@ -58,3 +59,5 @@ ENV JAVA_APP_NAME="dotcms-cli"
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
 
 ENTRYPOINT ["/dot-cli/entrypoint.sh"]
+
+RUN cat "$QUARKUS_LOG_FILE_PATH"
