@@ -30,7 +30,7 @@ ENV DOTCMS_CLIENT_SERVERS_DEFAULT=https://demo.dotcms.com/api
 COPY dot-service.yml ${DOT_SERVICES_HOME}
 
 #Replace the token with the value passed in the docker workflow action
-sed -i 's/token_plchldr/$1/g' "${DOT_SERVICES_HOME}dot-service.yml"
+RUN sed -i 's/token_plchldr/$1/g' "${DOT_SERVICES_HOME}dot-service.yml"
 
 RUN echo "DOT_CLI_HOME: ${DOT_CLI_HOME}"
 
