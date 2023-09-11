@@ -59,5 +59,3 @@ ENV JAVA_APP_NAME="dotcms-cli"
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
 
 ENTRYPOINT ["/dot-cli/entrypoint.sh"]
-
-RUN cat "${QUARKUS_LOG_FILE_PATH}"

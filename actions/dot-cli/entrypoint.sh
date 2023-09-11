@@ -11,3 +11,5 @@
   var=$(bash /dot-cli/run-java.sh "$@" )  
   echo "var: $var"
   echo "exit code: $?"
+
+  cat "${QUARKUS_LOG_FILE_PATH}"
