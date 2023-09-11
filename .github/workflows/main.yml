@@ -36,9 +36,6 @@ jobs:
             echo "Workflow: ${{ github.workflow }}"
             echo "PR: ${{ github.pull_request }}"
 
-      - name: Create test file
-        run: echo "This is a sample file" > /github/workspace/contents/sample-file.txt
-
 
       - name: Trigger dot-cli
         uses: ./actions/dot-cli
