@@ -3,7 +3,8 @@
 
   ls /dot-cli
   
-  var=$(bash /dot-cli/run-java.sh "$@" )
+  #var=$(bash /dot-cli/run-java.sh "$@" )
+  var=$(bash /dot-cli/run-java.sh "$2" )
   echo "var: $var"
   echo "exit code: $?"
 

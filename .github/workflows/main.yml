@@ -40,8 +40,8 @@ jobs:
         uses: ./actions/dot-cli
         id: dot-cli
         with:
-           command: 'push'
-           directory: '/'    
+           token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcGk4YjE2ZWJkYy03MjUzLTRjYmMtOTk5OC1mNmNmNmRmYzRiNjUiLCJ4bW9kIjoxNjk0NDQyMjQyMDAwLCJuYmYiOjE2OTQ0NDIyNDIsImlzcyI6IjRhZmYwZGZiMDciLCJsYWJlbCI6ImNsaS10ZXN0IiwiZXhwIjoxNzg5MTA2NDAwLCJpYXQiOjE2OTQ0NDIyNDIsImp0aSI6ImIyZTMzZDMyLWQ0NGQtNDI0NC1hM2QwLTc3YzZkY2UzNGNlNSJ9.uEkyMzS8LDlrlvLsrdOAPGUXj3F3GNZ-WhuA7ZYixxw'
+           command: 'ct pull FileAsset --workspace /github/workspace/'           
 
-      - name: Get the output time
+      - name: Get the cli return-code
         run: echo "The time was ${{ steps.dot-cli.outputs.return-code }}"

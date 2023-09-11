@@ -3,3 +3,4 @@
   active: true
   credentials:
     user: "admin@dotcms.com"
+    token: "token_plchldr"

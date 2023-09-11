@@ -22,7 +22,15 @@ COPY ${DOT_CLI} ${DOT_CLI_HOME}
 
 COPY entrypoint.sh ${DOT_CLI_HOME}
 
+#Tell the CLI to use the demo server
+#The sufix value used to create the environment value must match the name on dot-service.yml file in this case we are using default
+#dotcms.client.servers.default=https://demo.dotcms.com/api
+ENV DOTCMS_CLIENT_SERVERS_DEFAULT=https://demo.dotcms.com/api
+#now move the file into the dotcms folder located uder the user home folder
 COPY dot-service.yml ${DOT_SERVICES_HOME}
+
+#Replace the token with the value passed in the docker workflow action
+sed -i 's/token_plchldr/$1/g' "${DOT_SERVICES_HOME}dot-service.yml"
 
 RUN echo "DOT_CLI_HOME: ${DOT_CLI_HOME}"
 
