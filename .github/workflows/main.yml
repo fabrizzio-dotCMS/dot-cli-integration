@@ -48,5 +48,10 @@ jobs:
            option-value: '/github/workspace/contents/' 
            option-verbose: '--verbose'     
 
-      - name: Get the cli return-code
-        run: echo "The time was ${{ steps.dot-cli.outputs.return-code }}"
+       - name: Commit and push
+         run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add $GITHUB_WORKSPACE/contents
+          git commit -m "pushing changes"
+          git push
