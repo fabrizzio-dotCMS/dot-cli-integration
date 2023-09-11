@@ -6,3 +6,5 @@
   var=$(bash /dot-cli/run-java.sh "$@" )
   echo "var: $var"
   echo "exit code: $?"
+
+  cat /github/workspace/README.md
