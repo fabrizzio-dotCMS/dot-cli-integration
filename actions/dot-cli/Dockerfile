@@ -60,4 +60,4 @@ ENV JAVA_APP_NAME="dotcms-cli"
 
 ENTRYPOINT ["/dot-cli/entrypoint.sh"]
 
-RUN cat "$QUARKUS_LOG_FILE_PATH"
+RUN cat "${QUARKUS_LOG_FILE_PATH}"
