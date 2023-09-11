@@ -25,3 +25,9 @@
   echo "Repository after cli run ::: " 
 
   ls /github/workspace/contents/
+
+  echo $GITHUB_WORKSPACE
+
+  echo ":::::::" 
+
+  ls $GITHUB_WORKSPACE
