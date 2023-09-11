@@ -29,16 +29,6 @@ ENV DOTCMS_CLIENT_SERVERS_DEFAULT=https://demo.dotcms.com/api
 #now move the file into the dotcms folder located uder the user home folder
 COPY dot-service.yml ${DOT_SERVICES_HOME}
 
-ARG tkn=$1
-
-RUN echo $tkn
-
-#Replace the token with the value passed in the docker workflow action
-RUN sed -i -e  "s/token_plchldr/$tkn/g" "${DOT_SERVICES_HOME}dot-service.yml"
-
-RUN cat "${DOT_SERVICES_HOME}dot-service.yml"
-
-
 RUN echo "DOT_CLI_HOME: ${DOT_CLI_HOME}"
 
 RUN apt-get update && \

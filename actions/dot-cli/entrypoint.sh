@@ -1,9 +1,20 @@
 #!/bin/sh
   
   ls /dot-cli
+
+  echo "config::::"
+
   #proof that we can access the repo from within the script
   cat /github/workspace/README.md
   
+
+  tkn=$1
+  echo $tkn
+
+  #Replace the token with the value passed in the docker workflow action
+  sed -i -e  "s/token_plchldr/$tkn/g" "${DOT_SERVICES_HOME}dot-service.yml"
+
+
   echo "$@";  # will echo all args
   shift;  # will remove first arg from the "$@"
   echo "$@";  # will echo all args except first one
